@@ -1,0 +1,22 @@
+//PWM İLE FREKANS OKUMA
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
+  if(htim -> Instance == TIM3) {
+    if(htim -> Channel == HAL_TIM_ACTIVE_CHANNEL_1) { // Yukselen kenar oku
+      IC1Value = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // ch1 okunan deger
+      TIM2 ->CNT = 0; // Reset Count
+      Cycle = (float)IC1Value; // Cycle of PWM
+      }
+    else if(htim -> Channel == HAL_TIM_ACTIVE_CHANNEL_2) { // Dusen kenar oku
+      IC2Value = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2); // ch2 okunan deger
+      Width = (float) IC2Value; // okunan period
+      DutyCycle = 100 * Width / Cycle; // DutyCycle
+      Frequency = 1000000 / Cycle; // frekans
+      }
+    else {
+      Cycle = 0;
+      DutyCycle = 0;
+      Frequency = 0;
+      }
+    }
+  }

@@ -1,0 +1,15 @@
+main.c:81:5:main	8	static
+main.c:164:6:SystemClock_Config	120	static
+main.c:212:13:MX_USART2_UART_Init	8	static
+main.c:245:13:MX_DMA_Init	16	static
+main.c:263:13:MX_GPIO_Init	40	static
+main.c:286:6:bekle_flag_fonksiyon	8	static
+main.c:300:6:bitme_biti	8	static
+main.c:313:6:veri_hesapla	24	static
+main.c:320:6:step_flag	8	static
+main.c:329:6:frekans_flag	8	static
+main.c:339:6:led	24	static
+main.c:348:6:saniye_flag	8	static
+main.c:361:6:adim_dondur	8	static
+main.c:398:6:HAL_UART_RxCpltCallback	16	static
+main.c:410:6:Error_Handler	8	static
